@@ -3,3 +3,11 @@
 @tailwind utilities;
 
 /* You can add global styles to this file, and also import other style files */
+
+.link {
+    @apply cursor-pointer hover:underline;
+}
+
+.button {
+    @apply p-2 px-4 text-xs md:text-sm bg-yellow-300 rounded-full focus:outline-none hover:bg-yellow-400;
+}
