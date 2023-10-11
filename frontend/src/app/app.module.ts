@@ -10,6 +10,7 @@ import { NgIconsModule } from '@ng-icons/core';
 import { featherGithub } from '@ng-icons/feather-icons';
 import { HeroComponent } from './components/hero/hero.component';
 import { CustomersComponent } from './components/customers/customers.component';
+import { CalculateRouteComponent } from './components/calculate-route/calculate-route.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CustomersComponent } from './components/customers/customers.component';
     HomeComponent,
     HeroComponent,
     CustomersComponent,
+    CalculateRouteComponent,
   ],
   imports: [
     BrowserModule,
