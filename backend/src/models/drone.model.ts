@@ -22,5 +22,5 @@ export class CalculateRouteDto {
 
 export class CalculateRouteResultDto {
   path: string;
-  totalSeconds: number;
+  totalSeconds: string;
 }

@@ -8,7 +8,7 @@ import { DroneService } from '../services/drone.service';
 
 const calculateResultMock = {
   path: 'A-B-C',
-  totalSeconds: 10,
+  totalSeconds: '10',
 };
 
 class DroneServiceStub {

@@ -37,7 +37,7 @@ export class DroneService {
 
     const response: CalculateRouteResultDto = {
       path: fullPath.join('-'),
-      totalSeconds: totalCost,
+      totalSeconds: totalCost.toFixed(2),
     };
     return response;
   }

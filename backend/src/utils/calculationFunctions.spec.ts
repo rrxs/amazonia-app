@@ -25,7 +25,7 @@ describe('calculation functions', () => {
 
     const result = calculateFastRouteBetweenTwoPoints(mapMock, 'A', 'D');
 
-    expect(result.path).toEqual(['A', 'B', 'C', 'D']);
+    expect(result.path).toStrictEqual(['A', 'B', 'C', 'D']);
     expect(result.cost).toBe(10);
   });
 });
