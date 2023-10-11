@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { NgIconsModule } from '@ng-icons/core';
+import { featherGithub } from '@ng-icons/feather-icons';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgIconsModule.withIcons({ featherGithub }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
