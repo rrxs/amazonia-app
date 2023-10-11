@@ -1,1 +1,29 @@
-<p>calculate-route works!</p>
+<section class="bg-white">
+  <div class="py-8 lg:py-16 mx-auto px-4 container">
+    <h2 class="mb-4 lg:mb-8 section-header">Calculate fast routes</h2>
+    <div class="text-lg leading-8 text-center mb-8 sm:mb-16 text-gray-600">
+      Enter your information to calculate the fastest route.
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-8">
+      <div class="">
+        <div
+          class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+          role="alert"
+        >
+          The drone system only accepts positions where the first character is
+          in the range A to H and the second character is in the range 1 to 8.
+          Examples:
+          <span class="font-medium">D3</span>,
+          <span class="font-medium">G6</span>,
+          <span class="font-medium">F2</span>.
+        </div>
+        <app-calculate-form />
+      </div>
+
+      <div>
+        <div>result</div>
+        <div>last results</div>
+      </div>
+    </div>
+  </div>
+</section>

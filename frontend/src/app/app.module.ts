@@ -11,6 +11,7 @@ import { featherGithub, featherChevronsDown } from '@ng-icons/feather-icons';
 import { HeroComponent } from './components/hero/hero.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CalculateRouteComponent } from './components/calculate-route/calculate-route.component';
+import { CalculateFormComponent } from './components/calculate-route/calculate-form/calculate-form.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CalculateRouteComponent } from './components/calculate-route/calculate-
     HeroComponent,
     CustomersComponent,
     CalculateRouteComponent,
+    CalculateFormComponent,
   ],
   imports: [
     BrowserModule,
