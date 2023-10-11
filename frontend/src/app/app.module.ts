@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgIconsModule } from '@ng-icons/core';
-import { featherGithub } from '@ng-icons/feather-icons';
+import { featherGithub, featherChevronsDown } from '@ng-icons/feather-icons';
 import { HeroComponent } from './components/hero/hero.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CalculateRouteComponent } from './components/calculate-route/calculate-route.component';
@@ -25,7 +25,7 @@ import { CalculateRouteComponent } from './components/calculate-route/calculate-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgIconsModule.withIcons({ featherGithub }),
+    NgIconsModule.withIcons({ featherGithub, featherChevronsDown }),
   ],
   providers: [],
   bootstrap: [AppComponent],
