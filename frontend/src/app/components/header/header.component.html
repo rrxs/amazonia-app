@@ -1,17 +1,19 @@
 <header>
-  <div class="flex items-center bg-theme_blue p-1 flex-grow py-2 text-white">
-    <div class="ml-2 flex items-center flex-grow sm:flex-grow-0">
-      <img src="assets/logo-white.png" width="104" />
-    </div>
-    <div class="ml-auto flex items-center space-x-6 mx-6 whitespace-nowrap">
-      <a
-        href="https://github.com/rrxs/amazonia-app"
-        target="_blank"
-        class="flex items-center gap-2"
-      >
-        <ng-icon name="featherGithub"></ng-icon>
-        <span class="text-sm">Github project</span>
-      </a>
+  <div class="bg-theme_blue p-1 flex-grow py-2 text-white">
+    <div class="container flex items-center mx-auto">
+      <div class="ml-2 flex items-center flex-grow sm:flex-grow-0">
+        <img src="assets/logo-white.png" width="104" />
+      </div>
+      <div class="ml-auto flex items-center space-x-6 mx-6 whitespace-nowrap">
+        <a
+          href="{{ githubUrl }}"
+          target="_blank"
+          class="flex items-center gap-2"
+        >
+          <ng-icon name="featherGithub"></ng-icon>
+          <span class="text-sm">Github project</span>
+        </a>
+      </div>
     </div>
   </div>
 </header>

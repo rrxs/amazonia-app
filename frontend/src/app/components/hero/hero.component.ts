@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import Constants from 'src/app/utils/constants';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-hero',
+  templateUrl: './hero.component.html',
+  styleUrls: ['./hero.component.scss'],
 })
-export class HeaderComponent {
+export class HeroComponent {
   githubUrl = Constants.GITHUB_URL;
 }

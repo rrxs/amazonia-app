@@ -8,9 +8,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgIconsModule } from '@ng-icons/core';
 import { featherGithub } from '@ng-icons/feather-icons';
+import { HeroComponent } from './components/hero/hero.component';
+import { CustomersComponent } from './components/customers/customers.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    HeroComponent,
+    CustomersComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
