@@ -6,7 +6,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8">
       <div>
-        <app-calculate-form />
+        <app-calculate-form (onFormSubmit)="calculate($event)" />
       </div>
       <div>
         <div class="pb-4 border-b border-b-gray-100">

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Constants from 'src/app/utils/constants';
+import { Constants } from 'src/app/utils/constants';
 
 @Component({
   selector: 'app-hero',
