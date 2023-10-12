@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { CalculationForm } from 'src/app/models/calculation-form.model';
+import { CalculationFormModel } from 'src/app/models/calculation-form.model';
 
 @Component({
   selector: 'app-calculate-form',
@@ -14,9 +14,9 @@ export class CalculateFormComponent {
   });
 
   @Input() isLoading = false;
-  @Output() onFormSubmit = new EventEmitter<CalculationForm>();
+  @Output() onFormSubmit = new EventEmitter<CalculationFormModel>();
 
   onSubmit() {
-    this.onFormSubmit.emit(this.calculateFrom.value as CalculationForm);
+    this.onFormSubmit.emit(this.calculateFrom.value as CalculationFormModel);
   }
 }

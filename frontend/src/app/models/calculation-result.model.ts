@@ -1,4 +1,4 @@
-export interface CalculationResult {
+export interface CalculationResultModel {
   startPoint: string;
   objectPoint: string;
   destinationPoint: string;

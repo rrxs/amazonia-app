@@ -1,16 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, resolveForwardRef } from '@angular/core';
 import {
   DroneCalculationRequest,
   DroneCalculationResponse,
 } from '../models/drone.model';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ApiRoutes } from '../utils/api-routes';
+import { CalculationStorageModel } from '../models/calculation-storage.model';
 
 @Injectable()
 export class DroneService {
   constructor(private http: HttpClient) {}
+
+  private resultStorageSub = new Subject<CalculationStorageModel>();
+  private resultKey = 'calculationResults';
 
   calculateRoute(
     params: DroneCalculationRequest
@@ -23,5 +27,26 @@ export class DroneService {
       `${environment.baseUrl}${ApiRoutes.DRONE_CALCULATE_ROUTE}`,
       params
     );
+  }
+
+  watchResults(): Observable<CalculationStorageModel> {
+    return this.resultStorageSub.asObservable();
+  }
+
+  getResultsList(): CalculationStorageModel[] {
+    const resultsFromStorage = localStorage.getItem(this.resultKey);
+    if (resultsFromStorage) {
+      return JSON.parse(resultsFromStorage);
+    }
+    return [];
+  }
+
+  storeResult(result: CalculationStorageModel) {
+    const savedResults = this.getResultsList();
+    localStorage.setItem(
+      this.resultKey,
+      JSON.stringify([result, ...savedResults])
+    );
+    this.resultStorageSub.next(result);
   }
 }
