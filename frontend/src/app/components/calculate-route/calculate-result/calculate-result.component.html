@@ -1,8 +1,20 @@
 <div id="calculation">
   <div class="mb-2 text-gray-800 font-bold text-xl">Calculation result</div>
-  <div>
-    Your calculation result will appear here. What're waiting for? Just fill the
-    form and wait for the results.
+  <div class="text-sm">
+    Your calculation result will appear here. Just fill the form and wait for
+    the results.
+  </div>
+</div>
+<div id="hint">
+  <div
+    class="p-4 my-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+    role="alert"
+  >
+    <span class="font-medium">Tip!</span> The drone system only accepts
+    positions where the first character is in the range A to H and the second
+    character is in the range 1 to 8. Examples:
+    <span class="font-medium">D3</span>, <span class="font-medium">G6</span>,
+    <span class="font-medium">F2</span>.
   </div>
 </div>
 <div id="calculation-completed">
@@ -26,10 +38,8 @@
   </div>
 </div>
 <div id="calculation-error">
-  <div class="mb-2 text-red-500 font-bold text-xl">Error</div>
+  <div class="mb-2 text-red-500 font-bold text-xl">Something went wrong!</div>
   <div class="text-sm">
-    <p>
-      We sorry, but something went wrong. You can try again in a few minutes
-    </p>
+    <p>Our service didn't respond as expected. Please try again later.</p>
   </div>
 </div>

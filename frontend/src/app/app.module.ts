@@ -13,6 +13,7 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { CalculateRouteComponent } from './components/calculate-route/calculate-route.component';
 import { CalculateFormComponent } from './components/calculate-route/calculate-form/calculate-form.component';
 import { CalculateResultComponent } from './components/calculate-route/calculate-result/calculate-result.component';
+import { CalculateLatestsComponent } from './components/calculate-route/calculate-latests/calculate-latests.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CalculateResultComponent } from './components/calculate-route/calculate
     CalculateRouteComponent,
     CalculateFormComponent,
     CalculateResultComponent,
+    CalculateLatestsComponent,
   ],
   imports: [
     BrowserModule,

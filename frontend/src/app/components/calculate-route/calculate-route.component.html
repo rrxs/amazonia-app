@@ -4,25 +4,15 @@
     <div class="text-lg leading-8 text-center mb-8 sm:mb-16 text-gray-600">
       Enter your information to calculate the fastest route.
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-8">
-      <div class="">
-        <div
-          class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-          role="alert"
-        >
-          The drone system only accepts positions where the first character is
-          in the range A to H and the second character is in the range 1 to 8.
-          Examples:
-          <span class="font-medium">D3</span>,
-          <span class="font-medium">G6</span>,
-          <span class="font-medium">F2</span>.
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8">
+      <div>
         <app-calculate-form />
       </div>
-
       <div>
-        <div><app-calculate-result /></div>
-        <div>last results</div>
+        <div class="pb-4 border-b border-b-gray-100">
+          <app-calculate-result />
+        </div>
+        <div class="mt-4"><app-calculate-latests /></div>
       </div>
     </div>
   </div>
