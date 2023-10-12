@@ -15,6 +15,10 @@ export class DroneService {
   calculateRoute(
     params: DroneCalculationRequest
   ): Observable<DroneCalculationResponse> {
+    params.destinationPoint = params.destinationPoint.toUpperCase();
+    params.objectPoint = params.objectPoint.toUpperCase();
+    params.startPoint = params.startPoint.toUpperCase();
+
     return this.http.post<DroneCalculationResponse>(
       `${environment.baseUrl}${ApiRoutes.DRONE_CALCULATE_ROUTE}`,
       params

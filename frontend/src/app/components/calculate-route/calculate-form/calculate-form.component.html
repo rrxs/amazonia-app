@@ -33,6 +33,12 @@
     />
   </div>
   <div class="pt-2">
-    <button class="button w-full">Calculate route</button>
+    <button
+      class="button w-full"
+      [disabled]="isLoading || !calculateFrom.valid"
+    >
+      <span *ngIf="isLoading"><app-spinner /></span>
+      <span *ngIf="!isLoading">Calculate route</span>
+    </button>
   </div>
 </form>

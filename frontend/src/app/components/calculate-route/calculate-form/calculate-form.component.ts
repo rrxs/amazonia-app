@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CalculationForm } from 'src/app/models/calculation-form.model';
 
@@ -12,6 +12,8 @@ export class CalculateFormComponent {
     objectPosition: new FormControl(''),
     destinationPosition: new FormControl(''),
   });
+
+  @Input() isLoading = false;
   @Output() onFormSubmit = new EventEmitter<CalculationForm>();
 
   onSubmit() {

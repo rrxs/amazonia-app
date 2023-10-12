@@ -6,7 +6,7 @@
 
 @layer components {
   .button {
-    @apply text-white p-3 px-4 text-xs md:text-sm bg-red-500 rounded-full focus:outline-blue-500 hover:bg-red-700;
+    @apply text-white p-3 px-4 text-xs md:text-sm bg-red-500 rounded-full focus:outline-blue-500 hover:bg-red-700 disabled:bg-red-300 disabled:cursor-not-allowed;
   }
 
   .section-header {

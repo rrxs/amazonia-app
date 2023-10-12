@@ -6,11 +6,18 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8">
       <div>
-        <app-calculate-form (onFormSubmit)="calculate($event)" />
+        <app-calculate-form
+          [isLoading]="this.isLoading"
+          (onFormSubmit)="calculate($event)"
+        />
       </div>
       <div>
         <div class="pb-4 border-b border-b-gray-100">
-          <app-calculate-result />
+          <app-calculate-result
+            [isLoading]="isLoading"
+            [hasError]="hasError"
+            [calculationResult]="calculationResult"
+          />
         </div>
         <div class="mt-4"><app-calculate-latests /></div>
       </div>

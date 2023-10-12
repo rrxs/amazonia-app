@@ -17,6 +17,7 @@ import { CalculateLatestsComponent } from './components/calculate-route/calculat
 import { DroneService } from './services/drone.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CalculateFormComponent,
     CalculateResultComponent,
     CalculateLatestsComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

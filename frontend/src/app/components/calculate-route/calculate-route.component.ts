@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { finalize } from 'rxjs';
 import { CalculationForm } from 'src/app/models/calculation-form.model';
-import { DroneCalculationResponse } from 'src/app/models/drone.model';
+import { CalculationResult } from 'src/app/models/calculation-result.model';
 import { DroneService } from 'src/app/services/drone.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class CalculateRouteComponent {
 
   hasError = false;
   isLoading = false;
-  result: DroneCalculationResponse | undefined;
+  calculationResult: CalculationResult | undefined;
 
   calculate(formData: CalculationForm) {
     this.hasError = false;
@@ -24,12 +25,21 @@ export class CalculateRouteComponent {
         destinationPoint: formData.destinationPosition,
         objectPoint: formData.objectPosition,
       })
+      .pipe(finalize(() => (this.isLoading = false)))
       .subscribe({
         next: (response) => {
-          this.result = response;
+          this.calculationResult = {
+            path: response.path,
+            totalSeconds: response.totalSeconds,
+            startPoint: formData.startingPosition,
+            objectPoint: formData.objectPosition,
+            destinationPoint: formData.destinationPosition,
+          };
         },
-        error: () => (this.hasError = true),
-        complete: () => (this.isLoading = false),
+        error: () => {
+          this.hasError = true;
+          this.calculationResult = undefined;
+        },
       });
   }
 }

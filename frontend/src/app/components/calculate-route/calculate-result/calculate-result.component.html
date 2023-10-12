@@ -1,4 +1,4 @@
-<div id="calculation">
+<div id="calculation" *ngIf="!calculationResult && !hasError && !isLoading">
   <div class="mb-2 text-gray-800 font-bold text-xl">Calculation result</div>
   <div class="text-sm">
     Your calculation result will appear here. Just fill the form and wait for
@@ -17,27 +17,53 @@
     <span class="font-medium">F2</span>.
   </div>
 </div>
-<div id="calculation-completed">
+<div *ngIf="isLoading">
+  <div role="status" class="max-w-sm animate-pulse">
+    <div
+      class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"
+    ></div>
+    <div
+      class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"
+    ></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+    <div
+      class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"
+    ></div>
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div id="calculation-completed" *ngIf="calculationResult && !isLoading">
   <div class="mb-2 text-green-500 font-bold text-xl">Calculation completed</div>
 
   <div class="text-sm mb-4">
     <p>Locations provided</p>
-    <p><span class="font-medium">Origin:</span> A1</p>
-    <p><span class="font-medium">Object:</span> A1</p>
-    <p><span class="font-medium">Destination:</span> A1</p>
+    <p>
+      <span class="font-medium">Origin:</span>
+      {{ calculationResult.startPoint | uppercase }}
+    </p>
+    <p>
+      <span class="font-medium">Object:</span>
+      {{ calculationResult.objectPoint | uppercase }}
+    </p>
+    <p>
+      <span class="font-medium">Destination:</span>
+      {{ calculationResult.destinationPoint | uppercase }}
+    </p>
   </div>
   <div>
     <div>
       Your package must be delivered in
-      <span class="font-medium"> 222 seconds</span>.
+      <span class="font-medium">
+        {{ calculationResult.totalSeconds | number : "1.0-0" }} seconds</span
+      >.
     </div>
     <div>
       The fastest route calculated is
-      <span class="font-medium">A1-A2-A3</span>
+      <span class="font-medium">{{ calculationResult.path }}</span>
     </div>
   </div>
 </div>
-<div id="calculation-error">
+<div id="calculation-error" *ngIf="!calculationResult && hasError">
   <div class="mb-2 text-red-500 font-bold text-xl">Something went wrong!</div>
   <div class="text-sm">
     <p>Our service didn't respond as expected. Please try again later.</p>
