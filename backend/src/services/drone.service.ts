@@ -27,13 +27,10 @@ export class DroneService {
       calculateRouteDto.objectPoint,
       calculateRouteDto.destinationPoint,
     );
+    fromObjectToEnd.path.shift();
 
-    let fullPath = fromStartToObject.path.concat(fromObjectToEnd.path);
+    const fullPath = fromStartToObject.path.concat(fromObjectToEnd.path);
     const totalCost = fromStartToObject.cost + fromObjectToEnd.cost;
-
-    fullPath = fullPath.filter(
-      (item, index) => fullPath.indexOf(item) === index,
-    );
 
     const response: CalculateRouteResultDto = {
       path: fullPath.join('-'),
