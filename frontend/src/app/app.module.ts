@@ -14,6 +14,9 @@ import { CalculateRouteComponent } from './components/calculate-route/calculate-
 import { CalculateFormComponent } from './components/calculate-route/calculate-form/calculate-form.component';
 import { CalculateResultComponent } from './components/calculate-route/calculate-result/calculate-result.component';
 import { CalculateLatestsComponent } from './components/calculate-route/calculate-latests/calculate-latests.component';
+import { DroneService } from './services/drone.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,8 +35,10 @@ import { CalculateLatestsComponent } from './components/calculate-route/calculat
     BrowserModule,
     AppRoutingModule,
     NgIconsModule.withIcons({ featherGithub, featherChevronsDown }),
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [DroneService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
