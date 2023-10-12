@@ -1,6 +1,6 @@
-<form [formGroup]="calculateFrom" (ngSubmit)="onSubmit()">
-  <div class="mb-4">
-    <label for="origin" class="label">Origin</label>
+<form [formGroup]="calculateForm" (ngSubmit)="onSubmit()">
+  <div class="mb-6">
+    <label for="origin" class="label">Origin*</label>
     <input
       type="text"
       id="origin"
@@ -9,9 +9,24 @@
       maxlength="2"
       formControlName="startingPosition"
     />
+    <div
+      *ngIf="
+        startingPosition &&
+        startingPosition.invalid &&
+        (startingPosition.dirty || startingPosition.touched)
+      "
+      class="text-xs text-red-500 absolute"
+    >
+      <div *ngIf="startingPosition.errors?.['required']">
+        Origin is required.
+      </div>
+      <div *ngIf="startingPosition.errors?.['pattern']">
+        Origin is invalid. Examples: G3, D2, A8
+      </div>
+    </div>
   </div>
-  <div class="mb-4">
-    <label for="object" class="label">Object location</label>
+  <div class="mb-6">
+    <label for="object" class="label">Object location*</label>
     <input
       type="text"
       id="object"
@@ -20,9 +35,22 @@
       maxlength="2"
       formControlName="objectPosition"
     />
+    <div
+      *ngIf="
+        objectPosition &&
+        objectPosition.invalid &&
+        (objectPosition.dirty || objectPosition.touched)
+      "
+      class="text-xs text-red-500 absolute"
+    >
+      <div *ngIf="objectPosition.errors?.['required']">Origin is required.</div>
+      <div *ngIf="objectPosition.errors?.['pattern']">
+        Origin is invalid. Examples: G3, D2, A8
+      </div>
+    </div>
   </div>
-  <div class="mb-4">
-    <label for="destination" class="label">Destination</label>
+  <div class="mb-6">
+    <label for="destination" class="label">Destination*</label>
     <input
       type="text"
       id="destination"
@@ -31,11 +59,26 @@
       maxlength="2"
       formControlName="destinationPosition"
     />
+    <div
+      *ngIf="
+        destinationPosition &&
+        destinationPosition.invalid &&
+        (destinationPosition.dirty || destinationPosition.touched)
+      "
+      class="text-xs text-red-500 absolute"
+    >
+      <div *ngIf="destinationPosition.errors?.['required']">
+        Destination is required.
+      </div>
+      <div *ngIf="destinationPosition.errors?.['pattern']">
+        Destination is invalid. Examples: G3, D2, A8
+      </div>
+    </div>
   </div>
   <div class="pt-2">
     <button
       class="button w-full"
-      [disabled]="isLoading || !calculateFrom.valid"
+      [disabled]="isLoading || !calculateForm.valid"
     >
       <span *ngIf="isLoading"><app-spinner /></span>
       <span *ngIf="!isLoading">Calculate route</span>
