@@ -43,9 +43,11 @@
       "
       class="text-xs text-red-500 absolute"
     >
-      <div *ngIf="objectPosition.errors?.['required']">Origin is required.</div>
+      <div *ngIf="objectPosition.errors?.['required']">
+        Object location is required.
+      </div>
       <div *ngIf="objectPosition.errors?.['pattern']">
-        Origin is invalid. Examples: G3, D2, A8
+        Object location is invalid. Examples: G3, D2, A8
       </div>
     </div>
   </div>
