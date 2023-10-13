@@ -5,7 +5,9 @@ COPY package*.json .
 RUN npm install
 
 COPY . .
-RUN npm run build
+
+ARG ENV
+RUN if [ "$ENV" = "prod" ] ; then npm run build ; else npm run build:dev ; fi
 
 FROM nginx:alpine
 
