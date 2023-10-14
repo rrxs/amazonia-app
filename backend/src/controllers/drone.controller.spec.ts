@@ -12,9 +12,7 @@ const calculateResultMock = {
 };
 
 class DroneServiceStub {
-  async calculateRoute(
-    calculateRouteDto: CalculateRouteDto,
-  ): Promise<CalculateRouteResultDto> {
+  async calculateRoute(): Promise<CalculateRouteResultDto> {
     return Promise.resolve(calculateResultMock);
   }
 }
@@ -25,11 +23,8 @@ describe('DroneController', () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [DroneController],
-      providers: [DroneService],
-    })
-      .overrideProvider(DroneService)
-      .useClass(DroneServiceStub)
-      .compile();
+      providers: [{ provide: DroneService, useClass: DroneServiceStub }],
+    }).compile();
 
     droneController = app.get<DroneController>(DroneController);
   });

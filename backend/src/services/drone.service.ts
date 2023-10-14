@@ -4,18 +4,16 @@ import {
   CalculateRouteResultDto,
 } from '../models/drone.model';
 import { calculateFastRouteBetweenTwoPoints } from '../utils/calculationFunctions';
-import { HttpService } from '@nestjs/axios';
-import constants from '../utils/constants';
-import { firstValueFrom } from 'rxjs';
+import { MapService } from './map.service';
 
 @Injectable()
 export class DroneService {
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly mapService: MapService) {}
 
   async calculateRoute(
     calculateRouteDto: CalculateRouteDto,
   ): Promise<CalculateRouteResultDto> {
-    const map = await this.getMap();
+    const map = await this.mapService.getMap();
 
     const fromStartToObject = calculateFastRouteBetweenTwoPoints(
       map,
@@ -32,17 +30,9 @@ export class DroneService {
     const fullPath = fromStartToObject.path.concat(fromObjectToEnd.path);
     const totalCost = fromStartToObject.cost + fromObjectToEnd.cost;
 
-    const response: CalculateRouteResultDto = {
+    return {
       path: fullPath.join('-'),
       totalSeconds: totalCost.toFixed(2),
     };
-    return response;
-  }
-
-  private async getMap() {
-    const { data } = await firstValueFrom(
-      this.httpService.get(constants.MOCKIO_URL),
-    );
-    return data;
   }
 }

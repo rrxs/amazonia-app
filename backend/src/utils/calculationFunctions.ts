@@ -1,6 +1,12 @@
 // Reference: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
-const calculateFastRouteBetweenTwoPoints = (map, start, end) => {
+import { MapOutput } from 'src/models/map.model';
+
+const calculateFastRouteBetweenTwoPoints = (
+  map: MapOutput,
+  start: string,
+  end: string,
+) => {
   const distances = {};
   const previous = {};
   let totalCost = 0;
@@ -12,7 +18,7 @@ const calculateFastRouteBetweenTwoPoints = (map, start, end) => {
   }
 
   while (unvisited.size > 0) {
-    let closestPosition = null;
+    let closestPosition: string = null;
     for (const position of unvisited) {
       if (
         !closestPosition ||
