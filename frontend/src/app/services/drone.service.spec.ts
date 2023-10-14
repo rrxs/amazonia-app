@@ -1,13 +1,13 @@
-import { TestBed } from '@angular/core/testing';
-
 import { DroneService } from './drone.service';
+import { HttpClient } from '@angular/common/http';
 
 describe('DroneService', () => {
   let service: DroneService;
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(DroneService);
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    service = new DroneService(httpClientSpy);
   });
 
   it('should be created', () => {

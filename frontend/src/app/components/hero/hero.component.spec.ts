@@ -1,6 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeroComponent } from './hero.component';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'ng-icon',
+  template: '',
+})
+class FakeNgIcon {}
 
 describe('HeroComponent', () => {
   let component: HeroComponent;
@@ -8,7 +15,7 @@ describe('HeroComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeroComponent]
+      declarations: [HeroComponent, FakeNgIcon],
     });
     fixture = TestBed.createComponent(HeroComponent);
     component = fixture.componentInstance;
