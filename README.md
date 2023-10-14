@@ -36,6 +36,7 @@ Travel time: 135 seconds
 - Typescript v5
 - NestJs v10
 - Node.js v18
+- Docker
 - AWS EC2
 
 ## Live Demo
