@@ -100,13 +100,13 @@ You can run the application using **docker** or build and run manually.
 
 Run `docker-compose up`. Navigate to `http://localhost:8081/`.
 
-### Build and run
+## Development server
 
-#### Prerequisites
+### Prerequisites
 
 [Node v18](https://nodejs.org/en)
 
-#### Backend
+### Backend
 
 Find more details [here](https://github.com/rrxs/amazonia-app/tree/main/backend).
 
@@ -123,7 +123,7 @@ npm run start
 
 The server should be running on port `8080`.
 
-#### Frontend
+### Frontend
 
 Find more details [here](https://github.com/rrxs/amazonia-app/tree/main/frontend).
 
