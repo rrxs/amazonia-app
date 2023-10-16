@@ -5,9 +5,9 @@ services:
     build:
       context: ./frontend
     ports:
-      - 8081:80
+      - 4400:80
   backend:
     build:
       context: ./backend
     ports:
-      - 8080:8080
+      - 4300:4300

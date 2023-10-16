@@ -100,7 +100,7 @@ You can run the application using **docker** or build and run manually.
 
 ### Using Docker
 
-Run `docker-compose up`. Navigate to `http://localhost:8081/`.
+Run `docker-compose up`. Navigate to `http://localhost:4400/`.
 
 ## Development server
 
@@ -123,7 +123,7 @@ npm install
 npm run start
 ```
 
-The server should be running on port `8080`.
+The server should be running on port `4300`.
 
 ### Frontend
 

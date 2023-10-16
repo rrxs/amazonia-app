@@ -13,5 +13,5 @@ services:
     build:
       context: ./backend
     ports:
-      - 8080:8080
+      - 4300:4300
     restart: unless-stopped
