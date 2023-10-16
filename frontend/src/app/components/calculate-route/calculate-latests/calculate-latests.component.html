@@ -18,12 +18,12 @@
               {{ item.object | uppercase }}, Delivery:
               {{ item.destination | uppercase }}
             </p>
-            <p class="text-xs text-gray-500 truncate dark:text-gray-400">
+            <p class="text-xs text-gray-500 truncate">
               {{ item.date | date : "medium" }}
             </p>
           </div>
           <div
-            class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
+            class="inline-flex items-center text-base font-semibold text-gray-900"
           >
             in {{ item.totalSeconds | number : "1.0-0" }} seconds
           </div>
