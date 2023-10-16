@@ -34,6 +34,7 @@ Travel time: 135 seconds
 - Angular v16
 - Tailwind CSS
 - Typescript v5
+- Cypress
 - NestJs v10
 - Node.js v18
 - Docker
@@ -70,6 +71,7 @@ You can see the application live at [Live demo](http://ec2-54-221-95-15.compute-
     │   └── test (e2e tests)
     │
     ├── frontend
+    │   ├── cypress
     │   └── src
     │       ├── app
     │       │   ├── components
