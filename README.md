@@ -42,7 +42,7 @@ Travel time: 135 seconds
 
 ## Live Demo
 
-You can see the application live at [Live demo](http://ec2-50-19-189-15.compute-1.amazonaws.com/)
+~~You can see the application live at Live demo~~
 
 ## Features
 
